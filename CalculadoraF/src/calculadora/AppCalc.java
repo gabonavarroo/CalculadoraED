@@ -98,8 +98,6 @@ public class AppCalc extends javax.swing.JFrame {
                 resp = false; // No pueda haber un signo exactamente después de un parentesis (         
             if(esOperador(actual) && siguiente == ')')
                 resp = false; // No puede haber un parentesis ) despues de un signo 
-            /*if(actual == '.' && esOperador(siguiente))
-                resp = false;*/
         }
         if(esOperador(cad.charAt(cad.length()-1)))
             resp = false;  
