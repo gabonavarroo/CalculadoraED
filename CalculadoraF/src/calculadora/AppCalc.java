@@ -78,7 +78,8 @@ public class AppCalc extends javax.swing.JFrame {
      * <li> false: Si hay un operador después de un paréntesis de apertura “(“, excepto si es un signo negativo. 
      * <li> false: Si después de un signo sigue inmediatamente un paréntesis de cierre ')'. 
      * <li> false: Si el último valor de la cadena es un operador.
-     * <li> false: Si hay un operador o punto al final de la expresión.
+     * <li> false: Si hay un operador al final de la expresión.
+     * <li> flase: Si solo se ingresa un punto decimalen la expresión.
      * </ul>
      */
     public boolean analisisSignos(String cad){
@@ -100,8 +101,15 @@ public class AppCalc extends javax.swing.JFrame {
             /*if(actual == '.' && esOperador(siguiente))
                 resp = false;*/
         }
-        if(esOperador(cad.charAt(cad.length()-1)) || cad.charAt(cad.length() - 1) == '.')
-            resp = false;            
+        if(esOperador(cad.charAt(cad.length()-1)))
+            resp = false;  
+        if(cad.charAt(cad.length()-1) == '.'){
+            resp = false;
+            if(cad.length() > 1 && Character.isLetterOrDigit(cad.charAt(cad.length() - 2)))
+                resp = true;
+            else
+                resp = false;     
+        }
         return resp;
     }
     
