@@ -105,10 +105,7 @@ public class AppCalc extends javax.swing.JFrame {
             resp = false;  
         if(cad.charAt(cad.length()-1) == '.'){
             resp = false;
-            if(cad.length() > 1 && Character.isLetterOrDigit(cad.charAt(cad.length() - 2)))
-                resp = true;
-            else
-                resp = false;     
+            resp = cad.length() > 1 && Character.isLetterOrDigit(cad.charAt(cad.length() - 2));     
         }
         return resp;
     }
