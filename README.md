@@ -1,3 +1,3 @@
 # CalculadoraED
-Version final: CalculadoraF
+Version final: CalculadoraF -
 Proyecto de Calculadora para la materia de Estructuras de Datos
